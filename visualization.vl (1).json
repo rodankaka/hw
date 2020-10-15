@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Car Crashes in Suburbs",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://rodankaka.github.io/FIT3179/VIC_LOCALITY_POLYGON_SHP.topojson",
+    "format": {"type": "topojson", "feature": "VIC_LOCALITY_POLYGON_SHP"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/rodankaka/FIT3179/master-branch/Crash%20Statistics%20Victoria-V2.csv"
+        },
+        "key": "LGA_NAME",
+        "fields": ["LGA_NAME"]
+      }
+    }
+  ],
+  "projection": {"type": "equirectangular"},
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {"field": "LGA_NAME", "type": "nominal"},
+    "tooltip": []
+  },
+  "config": {}
+}
