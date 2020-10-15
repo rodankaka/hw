@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Car Crashes in Suburbs",
+  "title": "Car Crashes in Victorian Suburbs",
   "width": 800,
   "height": 600,
   "data": {
